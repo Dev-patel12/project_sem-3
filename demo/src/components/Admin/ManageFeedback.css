@@ -1,0 +1,131 @@
+.manage-feedback-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Content area */
+  .manage-feedback-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* Sidebar width */
+    transition: margin-left 0.3s ease;
+  }
+  
+  .manage-feedback-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e293b;
+  }
+  
+  /* Table container */
+  .feedback-table-container {
+    overflow-x: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table styling */
+  .feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .feedback-table th,
+  .feedback-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .feedback-table th {
+    background-color: #1e293b;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .feedback-table tr:hover {
+    background-color: #f1f5f9;
+  }
+  
+  /* Buttons */
+  .reply-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .reply-btn {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .reply-btn:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .delete-btn {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #dc2626;
+  }
+  
+  /* Responsive (Tablet & Mobile) */
+  @media (max-width: 768px) {
+    .manage-feedback-content {
+      margin-left: 0;
+      padding: 15px;
+    }
+  
+    .feedback-table {
+      display: block;
+      width: 100%;
+    }
+  
+    .feedback-table thead {
+      display: none;
+    }
+  
+    .feedback-table tbody {
+      display: block;
+    }
+  
+    .feedback-table tr {
+      display: block;
+      margin-bottom: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+  
+    .feedback-table td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+  
+    .feedback-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #1e293b;
+    }
+  
+    .feedback-table td:last-child {
+      border-bottom: none;
+    }
+  }
+  

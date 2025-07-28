@@ -1,0 +1,129 @@
+.manage-users-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Content area */
+  .manage-users-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* Offset for sidebar */
+    transition: margin-left 0.3s ease;
+  }
+  
+  .manage-users-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e293b;
+  }
+  
+  /* Table container */
+  .users-table-container {
+    overflow-x: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table styling */
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .users-table th,
+  .users-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .users-table th {
+    background-color: #1e293b;
+    color: white;
+  }
+  
+  .users-table tr:hover {
+    background-color: #f1f5f9;
+  }
+  
+  /* Buttons */
+  .edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .edit-btn {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .delete-btn {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #dc2626;
+  }
+  
+  /* Responsive (Tablet & Mobile) */
+  @media (max-width: 768px) {
+    .manage-users-content {
+      margin-left: 0; /* Remove left margin when sidebar is hidden */
+      padding: 15px;
+    }
+  
+    .users-table {
+      display: block;
+      width: 100%;
+    }
+  
+    .users-table thead {
+      display: none;
+    }
+  
+    .users-table tbody {
+      display: block;
+    }
+  
+    .users-table tr {
+      display: block;
+      margin-bottom: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+  
+    .users-table td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+  
+    .users-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #1e293b;
+    }
+  
+    .users-table td:last-child {
+      border-bottom: none;
+    }
+  }
+  

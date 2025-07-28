@@ -1,0 +1,131 @@
+.manage-complaints-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Content area */
+  .manage-complaints-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* Sidebar offset */
+    transition: margin-left 0.3s ease;
+  }
+  
+  .manage-complaints-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e293b;
+  }
+  
+  /* Table container */
+  .complaints-table-container {
+    overflow-x: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table styling */
+  .complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .complaints-table th,
+  .complaints-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .complaints-table th {
+    background-color: #1e293b;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .complaints-table tr:hover {
+    background-color: #f1f5f9;
+  }
+  
+  /* Buttons */
+  .resolve-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .resolve-btn {
+    background-color: #16a34a;
+    color: white;
+  }
+  
+  .resolve-btn:hover {
+    background-color: #15803d;
+  }
+  
+  .delete-btn {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #dc2626;
+  }
+  
+  /* Responsive (Tablet & Mobile) */
+  @media (max-width: 768px) {
+    .manage-complaints-content {
+      margin-left: 0;
+      padding: 15px;
+    }
+  
+    .complaints-table {
+      display: block;
+      width: 100%;
+    }
+  
+    .complaints-table thead {
+      display: none;
+    }
+  
+    .complaints-table tbody {
+      display: block;
+    }
+  
+    .complaints-table tr {
+      display: block;
+      margin-bottom: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+  
+    .complaints-table td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+  
+    .complaints-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #1e293b;
+    }
+  
+    .complaints-table td:last-child {
+      border-bottom: none;
+    }
+  }
+  

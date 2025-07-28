@@ -1,0 +1,96 @@
+/* SIDEBAR BASE STYLE */
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #1e293b;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .admin-sidebar h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #f8fafc;
+    text-align: center;
+  }
+  
+  /* Sidebar Menu */
+  .admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .admin-sidebar ul li {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .admin-sidebar ul li:hover {
+    background-color: #334155;
+  }
+  
+  /* HAMBURGER BUTTON */
+  .hamburger-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #1e293b;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  /* CLOSE BUTTON (Inside Sidebar) */
+  .close-btn {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* DESKTOP BEHAVIOR */
+  @media (min-width: 769px) {
+    .admin-sidebar {
+      transform: translateX(0); /* Always visible on desktop */
+    }
+  }
+  
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 768px) {
+    .admin-sidebar {
+      transform: translateX(-100%);
+    }
+  
+    .admin-sidebar.open {
+      transform: translateX(0);
+    }
+  
+    .hamburger-btn {
+      display: block;
+    }
+  
+    .close-btn {
+      display: block;
+    }
+  }
+  

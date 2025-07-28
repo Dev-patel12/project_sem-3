@@ -1,0 +1,208 @@
+/* Page container */
+.admin-login-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card styling */
+.admin-login-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  color: #f8fafc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Brand */
+.brand {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.brand-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.icon-brand {
+  font-size: 34px;
+  color: #f8fafc;
+}
+
+.brand h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-top: 4px;
+}
+
+/* Error alert */
+.alert-error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  padding: 10px;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+/* Input fields */
+.field-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.field-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.field-wrapper input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.field-wrapper input:focus {
+  border-color: #60a5fa;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Show/Hide password button */
+.toggle-pw {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-toggle {
+  font-size: 18px;
+}
+
+/* Login button */
+.btn-admin-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-admin-login:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+}
+
+.btn-admin-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.icon-login {
+  font-size: 18px;
+}
+
+/* Helper text */
+.helper-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 14px;
+}
+
+.helper-text a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.helper-text a:hover {
+  text-decoration: underline;
+}
+
+/* Spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .admin-login-card {
+    padding: 20px;
+  }
+  .brand h2 {
+    font-size: 1.5rem;
+  }
+}

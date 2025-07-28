@@ -1,0 +1,61 @@
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh;
+  background-color:#1e293b;
+  margin-left: 250px; /* Space for sidebar */
+}
+
+.profile-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-header img.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.profile-header h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-header .department {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.profile-details {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.profile-details p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+hr {
+  margin: 15px 0;
+  border: 0;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .profile-page {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
