@@ -19,7 +19,7 @@ import AdminDashboard from "./components/Admin/AdminDashboard";
 import ManageUsers from "./components/Admin/ManageUsers";
 import ManageComplaints from "./components/Admin/ManageComplaints";
 import ManageFeedback from "./components/Admin/ManageFeedback";
-// import AdminLogout from "./components/Admin/AdminLogout";
+
 
 function App() {
   const isAdminLoggedIn = localStorage.getItem("adminAuth"); 
@@ -48,7 +48,6 @@ function App() {
             <Route path="/admin/users" element={<ManageUsers />} />
             <Route path="/admin/complain" element={<ManageComplaints />} />
             <Route path="/admin/feedback" element={<ManageFeedback />} />
-            {/* <Route path="/admin/logout" element={<AdminLogout />} /> */}
 
         {/* Fallback */}
         <Route path="*" element={<h2 style={{ textAlign: "center", marginTop: "50px" }}>404 - Page Not Found</h2>} />
