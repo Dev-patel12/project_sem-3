@@ -5,14 +5,14 @@ import "./Home.css";
 
 export default function Home() {
   const location = useLocation();
-  const email = location.state?.email || "Unknown Student";
+  const name = location.state?.name || "Unknown Student";
 
   return (
     <>
       <Sidebar />
       <div className="home-container">
         <div className="home-content">
-          <h1>Welcome, {email}</h1>
+          <h1>Welcome, {name}</h1>
           <p className="subtitle">
             You're now logged in to the <strong>Student Grievance Redressal System</strong>.
           </p>
