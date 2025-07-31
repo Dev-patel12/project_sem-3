@@ -9,9 +9,33 @@ export default function Register() {
   const [studentId, setStudentId] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Registered:\nName: ${name}\nEmail: ${email}\nStudent ID: ${studentId}`);
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, studentId, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Registration successful!");
+        setName("");
+        setEmail("");
+        setStudentId("");
+        setPassword("");
+      } else {
+        alert(`Error: ${data.message || "Registration failed."}`);
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert("Server error. Please try again later.");
+    }
   };
 
   return (
