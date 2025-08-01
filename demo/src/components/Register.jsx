@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // ✅ Added useNavigate
 import "./Register.css";
 import { BiUserPlus } from "react-icons/bi";
 
@@ -8,6 +8,8 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [studentId, setStudentId] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate(); // ✅ initialize navigation
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,11 +26,12 @@ export default function Register() {
       const data = await res.json();
 
       if (res.ok) {
-        alert("Registration successful!");
+        alert("Registration successful! Redirecting to login...");
         setName("");
         setEmail("");
         setStudentId("");
         setPassword("");
+        navigate("/"); // ✅ redirect to login page
       } else {
         alert(`Error: ${data.message || "Registration failed."}`);
       }
@@ -43,7 +46,6 @@ export default function Register() {
       <form className="register-form animate" onSubmit={handleSubmit}>
         <h2 className="text-center mb-4">Register</h2>
 
-        {/* Full Name */}
         <div className="form-floating mb-3">
           <input
             type="text"
@@ -57,7 +59,6 @@ export default function Register() {
           <label htmlFor="name">Full Name</label>
         </div>
 
-        {/* Email */}
         <div className="form-floating mb-3">
           <input
             type="email"
@@ -71,7 +72,6 @@ export default function Register() {
           <label htmlFor="email">Email address</label>
         </div>
 
-        {/* Student ID */}
         <div className="form-floating mb-3">
           <input
             type="text"
@@ -85,7 +85,6 @@ export default function Register() {
           <label htmlFor="studentId">Student ID</label>
         </div>
 
-        {/* Password */}
         <div className="form-floating mb-4">
           <input
             type="password"
@@ -99,7 +98,6 @@ export default function Register() {
           <label htmlFor="password">Password</label>
         </div>
 
-        {/* Submit Button */}
         <button
           className="btn btn-success w-100 d-flex align-items-center justify-content-center gap-2"
           type="submit"
