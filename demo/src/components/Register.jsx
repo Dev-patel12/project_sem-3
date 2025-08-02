@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // ✅ Added useNavigate
+import { Link, useNavigate } from "react-router-dom"; // ✅ useNavigate instead of Navigate
 import "./Register.css";
 import { BiUserPlus } from "react-icons/bi";
 
 export default function Register() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState("");  
   const [email, setEmail] = useState("");
   const [studentId, setStudentId] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate(); // ✅ initialize navigation
+  //update regester redirect
+  const navigate = useNavigate(); // ✅ initialize navigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,12 +26,12 @@ export default function Register() {
       const data = await res.json();
 
       if (res.ok) {
-        alert("Registration successful! Redirecting to login...");
+        alert("Registration successful!");
         setName("");
         setEmail("");
         setStudentId("");
         setPassword("");
-        navigate("/"); // ✅ redirect to login page
+        navigate("/"); // ✅ correctly redirect to login
       } else {
         alert(`Error: ${data.message || "Registration failed."}`);
       }
